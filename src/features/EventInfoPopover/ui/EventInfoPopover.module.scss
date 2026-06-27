@@ -1,0 +1,141 @@
+.popover {
+  position: fixed;
+  z-index: 500;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  border: 1px solid #e5e7eb;
+  width: 300px;
+  font-family: 'Inter', sans-serif;
+  animation: pop 0.15s ease;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 10px 12px 6px;
+}
+
+.iconBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  transition: background 0.12s, color 0.12s;
+
+  &:hover {
+    background: #f3f4f6;
+    color: #323749;
+  }
+}
+
+.iconBtnDelete:hover {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.body {
+  padding: 0 16px 16px;
+}
+
+.colorBar {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #323749;
+  letter-spacing: -0.3px;
+  word-break: break-word;
+}
+
+.time {
+  font-size: 13px;
+  color: #6b7280;
+  letter-spacing: -0.2px;
+}
+
+.calName {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.description {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.titleDone {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.doneBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 7px 14px;
+  border: 1.5px solid #dedfe5;
+  border-radius: 8px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: #00ae1c;
+    color: #00ae1c;
+    background: #f0fdf4;
+  }
+}
+
+.doneBtnActive {
+  border-color: #00ae1c;
+  background: #00ae1c;
+  color: #fff;
+
+  &:hover {
+    background: transparent;
+    border-color: #dedfe5;
+    color: #6b7280;
+  }
+}

@@ -1,0 +1,5 @@
+/* Стилі перенесено до відповідних CSS-модулів:
+   - Header → widgets/Header/ui/Header.module.scss
+   - Logo   → shared/ui/Logo/Logo.module.scss
+   - Layout → pages/CalendarPage/ui/CalendarPage.module.scss
+*/

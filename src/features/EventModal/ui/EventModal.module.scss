@@ -1,0 +1,280 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Рядок з іконкою + полем */
+.fieldRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 6px 0;
+
+  > .inputField,
+  > .dateTimeGroup {
+    flex: 1;
+  }
+}
+
+/* Рядок All day */
+.allDayRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+/* Іконка 16px */
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Обгортка label + input з нижнім бордером */
+.inputField {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-bottom: 1px solid #dedfe5;
+  padding-bottom: 6px;
+  min-width: 0;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #323749;
+  line-height: 12px;
+  letter-spacing: -0.2px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #323749;
+  letter-spacing: -0.3px;
+  line-height: 20px;
+  font-family: inherit;
+  width: 100%;
+
+  &::placeholder {
+    color: #323749;
+    opacity: 0.8;
+  }
+
+  &:focus {
+    opacity: 1;
+  }
+}
+
+/* Дата + час в одному рядку */
+.dateTimeGroup {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.dateText {
+  font-size: 15px;
+  color: #323749;
+  letter-spacing: -0.3px;
+  line-height: 20px;
+  white-space: nowrap;
+  padding-bottom: 2px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  padding: 0 0 2px;
+
+  &:hover {
+    color: #00ae1c;
+  }
+}
+
+.datePicker {
+  position: fixed;
+  top: 64%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 400;
+  background: #fff;
+  border: 1px solid #dedfe5;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+  width: 260px;
+}
+
+.timeInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #323749;
+  letter-spacing: -0.3px;
+  line-height: 20px;
+  font-family: inherit;
+  width: 100%;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+
+.timeDash {
+  font-size: 15px;
+  color: #5b5f6e;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+/* All day */
+.hiddenCheck {
+  display: none;
+}
+
+.allDayLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #323749;
+  cursor: pointer;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+/* Does not repeat dropdown */
+.repeatField {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid #dedfe5;
+  padding-bottom: 4px;
+  margin-left: 8px;
+  position: relative;
+}
+
+.repeatSelect {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #323749;
+  letter-spacing: -0.3px;
+  font-family: inherit;
+  cursor: pointer;
+  opacity: 0.8;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 4px;
+}
+
+/* Calendar */
+.calRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 2px;
+}
+
+.calDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.calSelect {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #323749;
+  letter-spacing: -0.3px;
+  font-family: inherit;
+  cursor: pointer;
+  opacity: 0.8;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.chevron {
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+/* ── Мобільна версія ─────────────────────────── */
+@media (max-width: 767px) {
+  .fieldRow {
+    gap: 12px;
+  }
+
+  /* Дата на повний рядок, поля часу переносяться під неї */
+  .dateTimeGroup {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .dateTimeGroup > .inputField:first-child {
+    flex: 1 1 100% !important;
+  }
+
+  .dateTimeGroup > .inputField:not(:first-child) {
+    flex: 1 1 0 !important;
+  }
+
+  .timeDash {
+    margin-bottom: 8px;
+  }
+
+  /* All day + repeat — у дві строки, щоб select не наїжджав */
+  .allDayRow {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  .repeatField {
+    margin-left: 0;
+    flex: 1 1 100%;
+  }
+
+  .repeatSelect,
+  .calSelect {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .input,
+  .dateText,
+  .timeInput,
+  .repeatSelect,
+  .calSelect,
+  .allDayLabel {
+    font-size: 14px;
+  }
+
+  .actions {
+    padding-top: 16px;
+  }
+}

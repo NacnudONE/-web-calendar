@@ -1,0 +1,55 @@
+.tooltip {
+  position: fixed;
+  z-index: 9999;
+  background: #1e2235;
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  pointer-events: none;
+  max-width: 240px;
+}
+
+.tooltipDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.tooltipBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tooltipTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.2px;
+  line-height: 18px;
+}
+
+.tooltipTime {
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: -0.1px;
+}
+
+.tooltipDesc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+}
+
+.tooltipCal {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}

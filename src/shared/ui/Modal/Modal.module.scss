@@ -1,0 +1,89 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 16px 50px 0px rgba(0, 0, 0, 0.24);
+  max-width: 580px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideIn 0.2s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  border-bottom: 1px solid #dedfe5;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #323749;
+  letter-spacing: -0.6px;
+  line-height: 25px;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 4px;
+  line-height: 1;
+  border-radius: 4px;
+
+  &:hover {
+    color: #323749;
+    background: #f3f4f6;
+  }
+}
+
+.content {
+  padding: 20px 32px 28px;
+}
+
+@media (max-width: 767px) {
+  .dialog {
+    width: 95%;
+  }
+
+  .header {
+    padding: 16px 18px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .content {
+    padding: 16px 18px 20px;
+  }
+}

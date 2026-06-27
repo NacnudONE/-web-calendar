@@ -1,0 +1,39 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.diamonds {
+  position: relative;
+  width: 52px;
+  height: 40px;
+}
+
+.diamond {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  transform: rotate(45deg);
+  top: 6px;
+}
+
+.diamondBack {
+  background: #80d78d;
+  left: 18px;
+}
+
+.diamondFront {
+  background: #00ae1c;
+  left: 4px;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: 400;
+  color: #323749;
+  letter-spacing: -0.26px;
+  white-space: nowrap;
+}

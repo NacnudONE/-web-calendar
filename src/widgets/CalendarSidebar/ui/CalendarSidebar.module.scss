@@ -1,0 +1,169 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* "+ Create" button */
+.createBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  background: #00ae1c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  transition: background 0.15s;
+
+  &:hover {
+    background: #009818;
+  }
+}
+
+.datepickerWrap {
+  width: 100%;
+}
+
+/* "My calendars" section */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #323749;
+  letter-spacing: -0.3px;
+}
+
+.addBtn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #323749;
+  font-size: 18px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  padding: 0;
+
+  &:hover {
+    background: #f3f4f6;
+  }
+}
+
+/* Calendar item list */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: #f6f7f8;
+
+    .iconBtn {
+      opacity: 1;
+    }
+  }
+}
+
+/* Кольоровий чекбокс */
+.colorCheck {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: opacity 0.15s;
+
+  svg {
+    display: block;
+  }
+}
+
+.name {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 400;
+  color: #323749;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* Іконки редагування/видалення */
+.itemActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconBtn {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s;
+  border-radius: 3px;
+  color: #6b7280;
+
+  &:hover {
+    color: #323749;
+    background: #e5e7eb;
+  }
+}
+
+.iconBtnDelete:hover {
+  color: #ef4444;
+  background: #fee2e2;
+}

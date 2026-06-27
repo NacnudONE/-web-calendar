@@ -1,0 +1,302 @@
+.page {
+  display: flex;
+  height: 100vh;
+  background: #f2f5f7;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+/* ── LEFT PANEL ── */
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  position: relative;
+}
+
+.decoration {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decor-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  background: #00ae1c;
+}
+
+.decor-circle:nth-child(1) {
+  width: 320px;
+  height: 320px;
+  top: -80px;
+  left: -80px;
+}
+
+.decor-circle:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  bottom: 60px;
+  right: -40px;
+  opacity: 0.08;
+}
+
+.decor-circle:nth-child(3) {
+  width: 120px;
+  height: 120px;
+  bottom: -30px;
+  left: 80px;
+  opacity: 0.1;
+}
+
+.leftContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 420px;
+}
+
+.logoLarge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.logoDiamonds {
+  position: relative;
+  width: 72px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.logoDiamond {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 7px;
+  transform: rotate(45deg);
+  top: 9px;
+}
+
+.logoDiamondBack {
+  background: #80d78d;
+  left: 26px;
+}
+
+.logoDiamondFront {
+  background: #00ae1c;
+  left: 6px;
+}
+
+.logoText {
+  font-size: 36px;
+  font-weight: 700;
+  color: #323749;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 22px;
+  font-weight: 700;
+  color: #323749;
+  letter-spacing: -0.3px;
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+
+.taglineSub {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ── RIGHT PANEL ── */
+.right {
+  width: 480px;
+  flex-shrink: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 48px;
+  box-shadow: -4px 0 32px rgba(0, 0, 0, 0.08);
+}
+
+.formTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #323749;
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.formSubtitle {
+  font-size: 15px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.googleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 52px;
+  border: 1.5px solid #dedfe5;
+  border-radius: 12px;
+  background: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #323749;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  letter-spacing: -0.2px;
+}
+
+.googleBtn:hover {
+  background: #f9fafb;
+  border-color: #c4c9d4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.googleBtn:active {
+  background: #f3f4f6;
+}
+
+.googleBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.googleIcon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.errorMsg {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #dc2626;
+  text-align: center;
+  width: 100%;
+}
+
+.footer {
+  margin-top: 48px;
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ── Мобільна версія ─────────────────────────── */
+@media (max-width: 767px) {
+  .page {
+    flex-direction: column;
+    height: 100dvh;
+    overflow-y: auto;
+  }
+
+  /* Ліва панель → компактна шапка */
+  .left {
+    flex: none;
+    padding: 32px 24px 8px;
+  }
+
+  .decoration {
+    display: none;
+  }
+
+  .logoLarge {
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+
+  .logoDiamonds {
+    width: 56px;
+    height: 44px;
+  }
+
+  .logoDiamond {
+    width: 30px;
+    height: 30px;
+    top: 7px;
+  }
+
+  .logoDiamondBack {
+    left: 20px;
+  }
+
+  .logoDiamondFront {
+    left: 5px;
+  }
+
+  .logoText {
+    font-size: 28px;
+  }
+
+  .tagline {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .taglineSub {
+    display: none;
+  }
+
+  /* Права панель → форма на всю ширину */
+  .right {
+    width: 100%;
+    padding: 24px 24px 32px;
+    box-shadow: none;
+  }
+
+  .formTitle {
+    font-size: 24px;
+  }
+
+  .formSubtitle {
+    margin-bottom: 24px;
+  }
+
+  .footer {
+    margin-top: 24px;
+  }
+}
