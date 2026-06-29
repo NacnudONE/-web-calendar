@@ -1,0 +1,17 @@
+appId: com.webcalendar.app
+productName: WebCalendar
+npmRebuild: false
+directories:
+  output: release
+files:
+  - dist/**
+  - dist-electron/**
+publish:
+  provider: github
+  owner: NacnudONE
+  repo: -web-calendar
+win:
+  target: nsis
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true

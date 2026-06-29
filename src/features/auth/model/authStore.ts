@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth'
+import { GoogleAuthProvider, signInWithPopup, signInWithCredential, signOut, onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../../../shared/firebase'
 import { useCalendarStore } from '../../../entities/calendar'
 import type { GoogleUser } from './types'
@@ -17,8 +17,16 @@ export const useAuthStore = create<AuthState>()((set) => ({
   loading: true,
 
   login: async () => {
-    const provider = new GoogleAuthProvider()
-    await signInWithPopup(auth, provider)
+    if ('electron' in window) {
+      // Desktop: відкриваємо авторизацію у системному браузері
+      const { idToken, accessToken } = await (window as any).electron.googleSignIn()
+      const credential = GoogleAuthProvider.credential(idToken, accessToken)
+      await signInWithCredential(auth, credential)
+    } else {
+      // Web: стандартний Google popup
+      const provider = new GoogleAuthProvider()
+      await signInWithPopup(auth, provider)
+    }
   },
 
   logout: async () => {
